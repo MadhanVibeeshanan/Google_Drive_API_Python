@@ -1,9 +1,11 @@
 # Google_Drive_API_Python
 Accessing Files from Google Drive using Google Drive API in Python
 
-aFind the steps below to successfully access the file in your Google Drive.
+Find the steps below to successfully access the file in your Google Drive.
 The above-mentioned project was implemented using Anaconda Navigator. Install Anaconda Navigator -  https://www.anaconda.com/distribution/  or use any of the Python IDE of your choice. 
-Step 1: Enabling your API in the Google Cloud Platform
+
+# Step 1: Enabling your API in the Google Cloud Platform
+ 
   	Search Google Cloud Platform in your web browser or use link the link https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1006141&utm_content=text-ad-none-any-DEV_c-CRE_113120492767-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20%7C%20US%20%7C%20en%20%7C%20EXA%20~%20Google%20Cloud%20Platform-KWID_43700009942847400-kwd-26415313501&utm_term=KW_google%20cloud%20platform-ST_google%20cloud%20platform&gclid=EAIaIQobChMI-Z-R_q3a4AIVEhx9Ch2yzQZbEAAYASAAEgJ22_D_BwE
   
   	Sign in Google using your Gmail id. 
@@ -39,7 +41,8 @@ Step 1: Enabling your API in the Google Cloud Platform
   	Download the Client ID by clicking the Download option. Your credentials will be downloaded in the json format. Make sure you rename   the file to client_secret and save the file to you python file directory. 
 
 
-Step 2: Setting up the environment for your python file.  
+# Step 2: Setting up the environment for your python file.  
+  
   	Before the actual coding, you need to install a few python libraries related to Google API. 
      •	!pip install httplib2
      •	!pip install google-api-python-client
