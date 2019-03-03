@@ -32,10 +32,20 @@ def get_credentials():
     if not os.path.exists(credential_dir):
         os.makedirs(credential_dir)
     credential_path = os.path.join(credential_dir,'drive-python-quickstart.json')
-
+    # A oauth2client.client.Storage object stores and retrieves Credentials objects. This section describes the various methods to create and use Storage objects
     store = Storage(credential_path)
     credentials = store.get()
+    
+    """
+    The purpose of a Flow class is to acquire credentials that authorize your application access to user data.
+        In order for a user to grant access, OAuth 2.0 steps require your application to potentially redirect their browser multiple times.
+        A Flow object has functions that help your application take these steps and acquire credentials.
+        Flow objects are only temporary and can be discarded once they have produced credentials, but they can also be pickled and stored.
+        This section describes the various methods to create and use Flow objects.
+    """
+    
     if not credentials or credentials.invalid:
+        # The oauth2client.client.flow_from_clientsecrets() method creates a Flow object from a client_secrets.json file. 
         flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
         flow.user_agent = APPLICATION_NAME
         if flags:
@@ -51,7 +61,9 @@ def main():
     for up to 10 files.
     """
     credentials = get_credentials()
+    #Use the authorize() function of the Credentials class to apply necessary credential headers to all requests made by an httplib2.Http instance
     http = credentials.authorize(httplib2.Http())
+    #Once an httplib2.Http object has been authorized, it is typically passed to the build function
     service = discovery.build('drive', 'v3', http=http)
 
     results = service.files().list(
